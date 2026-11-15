@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="拾知：把學習、工具與生活裡的靈感，整理成可以再次使用的知識。">
+  <meta name="theme-color" content="#234d3d">
+  <title>拾知 · 個人知識庫</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script defer src="content/notes.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至筆記內容</a>
+  <aside class="sidebar" aria-label="知識庫導覽">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">拾</span><span>拾知<small>PERSONAL KNOWLEDGE</small></span></a>
+    <div class="workspace-label"><span class="status-dot"></span> 一個持續生長的知識花園</div>
+    <div class="nav-group-label">我的知識庫 <span>LIBRARY</span></div>
+    <nav class="view-nav" aria-label="筆記檢視">
+      <button class="nav-item active" data-view="all" aria-pressed="true"><span aria-hidden="true">▦</span>所有筆記<span class="nav-count" id="all-count">0</span></button>
+      <button class="nav-item" data-view="favorites" aria-pressed="false"><span aria-hidden="true">☆</span>我的收藏<span class="nav-count" id="favorite-count">0</span></button>
+    </nav>
+    <div class="nav-group-label category-heading">探索主題 <span>TOPICS</span></div>
+    <nav class="category-nav" aria-label="主題分類">
+      <button data-category="學習方法" aria-pressed="false"><i class="topic-dot sage"></i>學習方法<span data-count="學習方法">0</span></button>
+      <button data-category="數位工具" aria-pressed="false"><i class="topic-dot blue"></i>數位工具<span data-count="數位工具">0</span></button>
+      <button data-category="知識管理" aria-pressed="false"><i class="topic-dot ochre"></i>知識管理<span data-count="知識管理">0</span></button>
+      <button data-category="生活思考" aria-pressed="false"><i class="topic-dot rose"></i>生活思考<span data-count="生活思考">0</span></button>
+    </nav>
+    <div class="sidebar-note"><span aria-hidden="true">✳</span><p>不用記住所有事，<br>只要知道在哪裡找到它。</p><small>留給未來自己的線索</small></div>
+    <a class="source-link" href="https://github.com/beetroot245/Personal-Knowledge-Base" target="_blank" rel="noopener noreferrer">關於這個專案 <span aria-hidden="true">↗</span></a>
+  </aside>
+  <div class="page">
+    <header class="topbar"><span>我的空間 <span class="breadcrumb-divider">/</span> <strong>知識庫</strong></span><span class="topbar-right"><span class="status-dot"></span> 持續整理中 <span class="avatar" aria-label="個人知識庫">知</span></span></header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="eyebrow">COLLECT. CONNECT. CREATE.</div>
+        <h1 id="hero-title">讓知識，慢慢長成自己的樣子<span>。</span></h1>
+        <p>收集值得留下的想法，連結學過的事。<br class="mobile-break">這裡是我的第二大腦，也是靈感的起點。</p>
+        <div class="hero-bottom"><span class="hero-caption"><span aria-hidden="true">→</span> 每一則筆記，都是未來的養分</span><a href="#notes" class="hero-link">開始探索 <span aria-hidden="true">↓</span></a></div>
+        <div class="garden-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="leaf leaf-one"></span><span class="leaf leaf-two"></span><span class="leaf leaf-three"></span><div class="stem"></div><span class="art-star">✳</span></div>
+      </section>
+      <section class="overview" aria-label="知識庫統計"><div><span class="stat-icon" aria-hidden="true">▤</span><span><strong id="stat-notes">0</strong><small>則知識筆記</small></span></div><div><span class="stat-icon" aria-hidden="true">⌘</span><span><strong>4</strong><small>個探索主題</small></span></div><div><span class="stat-icon" aria-hidden="true">↗</span><span><strong id="stat-date">—</strong><small>最近內容更新</small></span></div><span class="overview-note">一點一滴，累積成光。</span></section>
+      <section id="notes" class="notes-section" aria-labelledby="section-title">
+        <div class="section-heading"><div><div class="eyebrow">THE KNOWLEDGE COLLECTION</div><h2 id="section-title">所有筆記 <span id="result-count" aria-live="polite"></span></h2></div><label class="sort-label">排序<select id="sort"><option value="updated">最近更新</option><option value="title">標題排序</option><option value="minutes">閱讀時間</option></select></label></div>
+        <div class="filter-bar"><div class="filter-tabs" role="group" aria-label="篩選主題"><button class="active" data-filter="all" aria-pressed="true">全部</button><button data-filter="學習方法" aria-pressed="false">學習方法</button><button data-filter="數位工具" aria-pressed="false">數位工具</button><button data-filter="知識管理" aria-pressed="false">知識管理</button><button data-filter="生活思考" aria-pressed="false">生活思考</button></div><label class="search-box"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="搜尋筆記、標籤或內容…" aria-label="搜尋筆記、標籤或內容"><kbd aria-hidden="true">/</kbd></label></div>
+        <div id="notes-grid" class="notes-grid"></div>
+        <div id="empty-state" class="empty-state" hidden><span aria-hidden="true">⌕</span><h3>這裡還沒有找到筆記</h3><p id="empty-message">換個關鍵字，或試試其他主題。</p><button id="reset-filters">查看所有筆記</button></div>
+        <noscript><p>請啟用 JavaScript 以搜尋與閱讀筆記。你也可以在 GitHub 的 content/notes.js 閱讀原始內容。</p></noscript>
+      </section>
+      <footer><span class="footer-brand">拾知 <span>·</span> 讓學習留下痕跡</span><span>以好奇心整理，以時間累積。<a href="https://github.com/beetroot245/Personal-Knowledge-Base/blob/main/AGENTS.md" target="_blank" rel="noopener noreferrer">專案規則 ↗</a></span></footer>
+    </main>
+  </div>
+  <dialog id="note-dialog" aria-labelledby="note-title"><div class="dialog-top"><span>拾知 / 閱讀筆記</span><button id="close-note" class="close-button" aria-label="關閉筆記">✕</button></div><article id="note-content"></article><div class="dialog-bottom"><span>把理解留在這裡，讓想法繼續生長。</span><button id="dialog-favorite" class="text-button">收藏筆記</button></div></dialog>
+</body>
+</html>
